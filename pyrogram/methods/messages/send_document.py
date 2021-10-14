@@ -178,6 +178,7 @@ class SendDocument(Scaffold):
                 media = raw.types.InputMediaUploadedDocument(
                     mime_type=self.guess_mime_type(document.name) or "application/zip",
                     file=file,
+                    force_file=force_document or None,
                     thumb=thumb,
                     attributes=[
                         raw.types.DocumentAttributeFilename(file_name=document.name)
